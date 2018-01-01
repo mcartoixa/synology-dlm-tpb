@@ -2,8 +2,8 @@
 "name": "mcartoixa_thepiratebay",
 "displayname": "The Pirate Bay",
 "description": "The Pirate Bay search module for Synology Download Manager",
-"version": "0.0",
-"site": "https://pirateproxy.ist",
+"version": "0.1",
+"site": "https://piratebay.to/",
 "module": "search.php",
 "type": "search",
 "class": "SynoDLMSearchThePirateBay"
