@@ -3,6 +3,8 @@
 <project name="synology-dlm-tpb" default="build">
     <autoloader />
 
+    <property environment="env" />
+
     <property name="bin.dir" value="${project.basedir}/bin" />
     <property name="dlm.dir" value="${project.basedir}/dlm" />
     <property name="tmp.dir" value="${project.basedir}/tmp" />
@@ -15,7 +17,17 @@
 
 
     <target name="prepare.version" depends="prepare.dlm">
-        <phing phingfile="build.xml" dir="./dlm" target="prepare.version" inheritAll="true" haltonfailure="true" />
+        <if>
+            <and>
+                <isset property="env.DLM_PACKAGE_VERSION" />
+                <not>
+                    <equals arg1="${env.DLM_PACKAGE_VERSION}" arg2="0.0.0" />
+                </not>
+            </and>
+            <then>
+                <phing phingfile="build.xml" dir="./dlm" target="prepare.version" inheritAll="true" haltonfailure="true" />
+            </then>
+        </if>
     </target>
 
     <target name="prepare.dlm">

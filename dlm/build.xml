@@ -3,6 +3,8 @@
 <project name="mcartoixa_thepiratebay.dlm" default="build">
     <autoloader />
 
+    <property environment="env" />
+
     <property name="build.bin.dir" value="${tmp.bin.dir}/dlm" />
     <property name="build.obj.dir" value="${tmp.obj.dir}/dlm" />
     <property name="build.out.dir" value="${tmp.out.dir}/bin" />
@@ -20,7 +22,10 @@
     <target name="rebuild" depends="clean,build" />
     <target name="release" depends="rebuild,package" />
 
-    <target name="prepare.version" />
+    <target name="prepare.version">
+        <echo message="Preparing version ${env.DLM_PACKAGE_VERSION}" />
+        <replaceregexp file="INFO" pattern="(?&lt;=&quot;version&quot;\W)\s+&quot;\d+\.\d+\.\d+&quot;" replace=" &quot;${env.DLM_PACKAGE_VERSION}&quot;" />
+    </target>
 
 
 
