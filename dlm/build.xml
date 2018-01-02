@@ -72,7 +72,7 @@
 
 
     <target name="package" depends="package.prepare,build">
-        <tar destfile="${build.out.dir}/mcartoixa_thepiratebay.dlm" compression="gzip">
+        <tar destfile="${build.out.dir}/${phing.project.name}" compression="gzip">
             <fileset dir="${build.bin.dir}">
                 <include name="**/**" />
                 <exclude name="composer.*"/>

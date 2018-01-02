@@ -4,7 +4,7 @@
 ::
 ::                 /clean    - Cleans the project
 ::                 /rebuild  - Cleans and builds the project (default)
-::                 /release  - Rebuilds the project and performs additional operations
+::                 /release  - Rebuilds the project and creates the packages
 ::
 ::                 /NoPause  - Does not pause after completion
 ::                 /?        - Gets the usage for this script
@@ -92,7 +92,7 @@ ECHO Usage: "build [/clean | /rebuild | /release] [/NoPause] [/?]"
 ECHO.
 ECHO                 /clean    - Cleans the project
 ECHO                 /rebuild  - Cleans and builds the project (default)
-ECHO                 /release  - Rebuilds the project and performs additional operations
+ECHO                 /release  - Rebuilds the project and creates the packages
 ECHO.
 ECHO                 /NoPause  - Does not pause after completion
 ECHO                 /?        - Gets the usage for this script
