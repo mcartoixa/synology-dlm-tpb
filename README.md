@@ -1,6 +1,6 @@
 [![Build status](https://travis-ci.org/mcartoixa/synology-dlm-tpb.svg?branch=master)](https://travis-ci.org/mcartoixa/synology-dlm-tpb)
 # Installation
-- Download the latest version of the module and install it in the [BT Search section of Download Station](https://www.synology.com/en-global/knowledgebase/DSM/help/DownloadStation/download_setup#torrent).
+- Download [the latest version of the module](https://github.com/mcartoixa/synology-dlm-tpb/releases/latest) and install it in the [BT Search section of Download Station](https://www.synology.com/en-global/knowledgebase/DSM/help/DownloadStation/download_setup#torrent).
 
 # Development
 ## Build

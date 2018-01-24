@@ -15,13 +15,13 @@ $search->prepare($curl, 'test');
 $response = curl_exec($curl);
 if ($response===false)
 {
-    echo 'Error: ' . curl_error($curl);
+    echo 'Error: ' . curl_error($curl)."\n";
 } else
 {
     $search->parse($plugin, $response);
     foreach ($plugin->results as $result)
     {
-        printf('\t%s %s %d %d\n', $result->title, $result->datetime, $result->seeds, $result->leechs);
+        printf("\t%s %s %d %d\n", $result->title, $result->datetime, $result->seeds, $result->leechs);
     }
 }
 curl_close($curl);

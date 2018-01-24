@@ -26,6 +26,8 @@ class SynoDLMSearchThePirateBay
 
     public function parse($plugin, $response)
     {
+        $ret = 0;
+
         $internalErrors = libxml_use_internal_errors(true);
 
         $dom = new DOMDocument('1.0', 'UTF-8');
@@ -36,7 +38,9 @@ class SynoDLMSearchThePirateBay
         {
             $titleNodes = $xpath->query('.//div[@class="detName"]/a', $resultNode);
             if (empty($titleNodes))
+            {
                 continue;
+            }
 
             $title = trim($titleNodes[0]->nodeValue);
             if ($title!='')
@@ -47,7 +51,9 @@ class SynoDLMSearchThePirateBay
                 $lineNodes = $xpath->query('.//td', $resultNode);
 
                 if (empty($downloadNodes))
+                {
                     continue;
+                }
                 $download = $downloadNodes[0]->getAttribute('href');
                 $size = 0.0;
                 $datetime = '1970-01-01 00:00:00';
@@ -99,10 +105,13 @@ class SynoDLMSearchThePirateBay
                 $category = trim($categoryNodes[0]->nodeValue);
 
                 $plugin->addResult($title, $download, $size, $datetime, $page, $hash, $seeds, $leechs, $category);
+                $ret++;
             }
         }
 
         libxml_use_internal_errors($internalErrors);
+
+        return $ret;
     }
 }
 ?>
