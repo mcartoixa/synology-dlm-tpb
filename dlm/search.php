@@ -5,7 +5,7 @@ define('TPB_USER_AGENT', 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) lik
 
 class SynoDLMSearchThePirateBay
 {
-    const PIRATEBAY_URL = 'https://opentpb.com';
+    const PIRATEBAY_URL = 'https://proxtpb.art/';
     private $qurl = SynoDLMSearchThePirateBay::PIRATEBAY_URL.'/search/%s/0/7/0'; // Sort by descending SE
 
     public function __construct()

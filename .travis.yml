@@ -3,18 +3,18 @@ php:
 - '5.6'
 
 env:
-  - DLM_PACKAGE_VERSION=1.1.$TRAVIS_BUILD_NUMBER
+- DLM_PACKAGE_VERSION=1.2.$TRAVIS_BUILD_NUMBER
 
 install:
-  - php bin/composer.phar install -n
+- php bin/composer.phar install -n
 
 script:
-  - vendor/bin/phing -f build.xml prepare.version release
+- vendor/bin/phing -f build.xml prepare.version release
 
 deploy:
   provider: releases
   api_key:
-    secure: "Q4UNbY2lQlvEWgGxJE8w3k7WWePXyJMuFVuIbgSYmdmFGrqxl9L+Aj6zCqTOcpCKa4xzL1e1gTvJ/hN5ljx9bqIKYj9hb9gDQjRIjwshTLL8C738u7t1Jsrjuo1OqYRWInmTxviewqGIPvraNCu2kwBTnLYzsVAsGZRi6oi1pVC/EvSnsB5WdF1+b/1pNXaeiCxpF2/WbWD1eqeZ4mDIDwtKrwVVDZIypOrNckQEyDqFSN5rAiEJD/Ll3j2qpOcxLvMsgj+mZUJsY/eAXQSNbVt9eQqA/96bPu29iwvK9g5IO1OWymaTwDEqH0jDdSOMtv4UnqgiCW37wYlmTH6vqV4akshpHK7D4Vxdl5mPHE1Pte7vXb6ozbrtq9kuQaDKg02/SW4p1IRC7RF6N/7qfYzm38CoY7SKvEOj7iS86VYBTrRu/smiZFgjstSWkbDBlLva7IWMmlW5/fqgCyOLHt5QYRL6cq6JUKso5fknPBr6jPglic7UrZZMYs8vky+r8+xpaj5Ej/ZEGRCFxuG3y2b3yRTeJFGjKoohUSYPFb//yj88JYp1uAP9zYKpJoa4rHVSi059Rm8/JgpD+I+D/fFeIwBnXN0gWP975PzivOngy96gnScj3TGfpZbKe8tA8pggK2X6qLh63B0rlbGhvGMHyknmS5PM2kISMU0OVdM="
+    secure: JCxHp3gPAEMsZ8TaM0B3p+W2WRWAmpY95X6aPnbUu1dgbEvhVyOstbexAZdW0pD0XY6+XU8777mEkW7MiY1JkX2bjwNZjzHebFqD5EXxn6trS3ojt4Y4jd/cUBWC4zfSgRkGOTwURU4z1OxuybyhDXe7f1V99LKrLDajCKGILLgIBDfoTzfmUZkfXFoR3VVXOvLIrjHpflakfCtkCTto5aTrrKQtytIkyk3WJtI/lt946R94zQxGy3qmi5iTIgV4T2+Kgao9SX7wsHucYEHs/B9XKKMxt3LzF5ovRhtDTNselsA613ZWce9xgCZZbM7S5QbK8vriXy/LE9gMneCrJtgLtTF3qrVU3lJkvhE2Z/yDmMm0GPHw0XXYh59cwrv51pPMb6a6a7WXaVSa3wLZiuSlAbe1OI8dzQbqghMOmodK+L7ysTasdt64qMDr3oG8K8bAc001YrysiS5/nPVYGCtDk0k3BpxA5TwBFa+z5fdGOcuh3cmyEUkR/qgOMv8vYhMbiYTwfaF3dbmY//SALa3r6bOM+v95tY4M5I0AhRNljWYbT/Xus2X/aM40t6oFVjkcVpw883kJIcojMPITu4VvpH4PBgNS/SI0ZRY4EZsJpnbmNaLbpgPGbZgdoSK8kTiS13PRoSAoes9U9QTTuuzttg1pkJJBW4l5olvpt6k=
   file_glob: true
   file: tmp/out/bin/*
   skip_cleanup: true
